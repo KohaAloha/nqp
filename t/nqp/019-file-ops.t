@@ -430,10 +430,10 @@ my sub create_buf($type) {
 
     nqp::unlink($test-file);
 }
-=c
+
 { # RT#131301: https://rt.perl.org/Ticket/Display.html?id=131301
-    nqp::closedir(my $fh := nqp::opendir(".")); try nqp::nextfiledir($fh);
-    ok( 1, 'no segfault when trying to nextfiledir() a closed dir handle' );
+#    nqp::closedir(my $fh := nqp::opendir(".")); try nqp::nextfiledir($fh);
+#    ok( 1, 'no segfault when trying to nextfiledir() a closed dir handle' );
 
     my $dir := 'test-nqp-dir';
 
@@ -464,8 +464,6 @@ my sub create_buf($type) {
     nqp::unlink($dir ~ '/file2');
     nqp::rmdir($dir);
 }
-=cut
-
 
 # test spurt
 {
