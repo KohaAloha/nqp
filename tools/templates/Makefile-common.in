@@ -122,7 +122,7 @@ PREFIX          = @nfp(@prefix@)@
 BIN_DIR         = @nfp(@prefix@/bin)@
 NQP_HOME        = @nfp($(PREFIX)/share/nqp)@
 NQP_LIB_DIR     = @nfp(@nqplibdir@)@
-PROVE_OPTIONS   = -j0$(TEST_JOBS)
+PROVE_OPTIONS   = -vv -j0$(TEST_JOBS)
 PROVE           = prove $(PROVE_OPTIONS)
 BASE_DIR		= @nfp(@base_dir@)@
 
